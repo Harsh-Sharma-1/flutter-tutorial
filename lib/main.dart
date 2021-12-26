@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'pages/home_page.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     functutorial(); //since we have not passed any value so it take default
     functutorial(price: 20); //since we have passed 20 in it so it will take 20
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
           primarySwatch: Colors.deepPurple,
@@ -27,8 +29,8 @@ class MyApp extends StatelessWidget {
       // initialRoute: "/home",
       routes: {
         "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
